@@ -15,13 +15,15 @@ namespace NiceHashBalanceIFTTT
     {
         static void Main(string[] args)
         {
-            if(args.Count() != 3)
-            {
-                Console.WriteLine("Usage: <WalletAddress> <Event> <Key>");
-            }
-            float pendingBalance = UpdateBalance(args);
-            PushResultToIFTTT(args, pendingBalance);
-            Console.ReadLine();
+			if (args.Count() != 3)
+			{
+				Console.WriteLine("Usage: <WalletAddress> <Event> <Key>");
+			}
+			else
+			{
+				float pendingBalance = UpdateBalance(args);
+				PushResultToIFTTT(args, pendingBalance);
+			}
 
         }
         private static float UpdateBalance(string[] args)
